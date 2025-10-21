@@ -25,75 +25,71 @@
       line-height: 1.6;
     }
 
-    .container {
-      width: 90%;
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
-    }
-
     header {
       background-color: var(--primary-color);
       color: #333;
-      text-align: center;
-      padding: 60px 20px;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
-    header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
     }
 
-    header p {
-      font-size: 1.2rem;
+    .header-left img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent-color);
+    }
+
+    .header-left .text {
+      text-align: left;
+    }
+
+    .header-left h1 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
+
+    .header-left p {
+      font-size: 1rem;
       color: #555;
-    }
-
-    nav {
-      margin-top: 20px;
     }
 
     nav ul {
       list-style: none;
-      padding: 0;
-    }
-
-    nav ul li {
-      display: inline;
-      margin: 0 15px;
+      display: flex;
+      gap: 25px;
     }
 
     nav ul li a {
       text-decoration: none;
       color: #333;
       font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #b86e6e;
     }
 
     section {
-      padding: 60px 0;
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
     }
 
     h2 {
       font-size: 2rem;
       margin-bottom: 20px;
       color: #444;
-    }
-
-    footer {
-      background: var(--accent-color);
-      color: #333;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-
-    a {
-      color: #b86e6e;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
     }
 
     .highlight {
@@ -108,14 +104,23 @@
       margin-left: 20px;
     }
 
-    @media (max-width: 600px) {
-      nav ul li {
-        display: block;
-        margin: 10px 0;
-      }
+    footer {
+      background: var(--accent-color);
+      color: #333;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
 
-      header h1 {
-        font-size: 2rem;
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
       }
     }
   </style>
@@ -123,20 +128,25 @@
 <body>
 
   <header>
-    <div class="container">
-      <h1>Melany Leon</h1>
-      <p>Future Cloud Solutions Architect</p>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#goals">Goals</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+    <div class="header-left">
+      <!-- Replace the image link below with your actual image file -->
+      <img src="melany.jpg" alt="Melany Leon Photo" />
+      <div class="text">
+        <h1>Melany Leon</h1>
+        <p>Future Cloud Solutions Architect</p>
+      </div>
     </div>
+
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#goals">Goals</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section id="about" class="container">
+  <section id="about">
     <h2>About Me</h2>
     <div class="highlight">
       I’m a senior in high school working toward a career in cloud computing. Currently studying for the <strong>AWS Certified Cloud Practitioner</strong> exam and preparing to major in <strong>Computer Information Systems (C.I.S)</strong> in college.
@@ -146,7 +156,7 @@
     </p>
   </section>
 
-  <section id="goals" class="container">
+  <section id="goals">
     <h2>My Goals</h2>
     <ul>
       <li>📚 Earn my <strong>AWS Cloud Practitioner Certification</strong></li>
@@ -157,7 +167,7 @@
     </ul>
   </section>
 
-  <section id="contact" class="container">
+  <section id="contact">
     <h2>Contact</h2>
     <p>LinkedIn: 
       <a href="https://www.linkedin.com/in/melany-leon-b8b0ba38b" target="_blank">
